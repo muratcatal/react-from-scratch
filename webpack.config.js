@@ -11,7 +11,7 @@ module.exports = {
     },
     devServer: {
         inline: true,
-        port: 3000,
+        port: 8080,
         contentBase: path.join(__dirname, "public"),
         open: true,
         overlay: true, // shows when an error occurrs on page.
