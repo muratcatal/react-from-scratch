@@ -22,12 +22,25 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.tsx$/,
+                enforce: 'pre',
+                loader: 'tslint-loader',
+                options: {
+                    emitErrors: true,
+                    failOnHint: true,
+                    typeCheck: true,
+                    tsConfigFile: 'tsconfig.json'
+                }
+            },
+            {
                 test: /\.tsx?$/,
                 use: [
                     {
+                        // convert es6 to es5
                         loader:"babel-loader"
                     },
                     {
+                        // converts type-script code to es6
                         loader: "ts-loader",
                         options: {
                             configFile: 'tsconfig.json'
