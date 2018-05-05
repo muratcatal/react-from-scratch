@@ -23,10 +23,21 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader",
-                options:{
-                    configFile: 'tsconfig.json'
-                }
+                use: [
+                    {
+                        loader:"babel-loader"
+                    },
+                    {
+                        loader: "ts-loader",
+                        options: {
+                            configFile: 'tsconfig.json'
+                        }
+                    }
+                ]
+            }, {
+                test: /\.(jsx?)$/,
+                loaders: ['babel'],
+                exclude: [/node_modules/]
             }
         ]
     }
