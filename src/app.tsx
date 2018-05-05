@@ -1,29 +1,28 @@
-import React, {Component} from 'react';
-import { Roles } from './roles';
-import { Sex } from './sex';
+import React, {Component} from "react";
+import { Roles } from "./roles";
+import { Sex } from "./sex";
 
-
-export interface AppProps {
-	name: string,
-	surname: string,
-	role : Roles,
-	age? : number // optional,
-	readonly sex : Sex
+export interface IAppProps {
+	 name: string;
+	surname: string;
+	role: Roles;
+	age?: number; // optional,
+	readonly sex: Sex;
 }
 
-class App extends Component<AppProps,{}> {
-	format = (name: string, surname: string,role : Roles) : string => {
-		return `Dear, ${name} ${surname}, your role is ${role}`
+class App extends Component<IAppProps, {}> {
+	public format = (name: string, surname: string, role: Roles): string => {
+		return `Dear, ${name} ${surname}, your role is ${role}`;
 	}
 
-	error = (message : string) : never => {
+	public error = (message: string): never => {
 		throw new Error(message);
 	}
 
-	render () {
-		const {name,surname,role} = this.props;
+	public render() {
+		const {name, surname, role} = this.props;
 
-		return <h1>{this.format(name,surname,role)}</h1>
+		return <h1>{this.format(name, surname, role)}</h1>;
 	}
 }
 

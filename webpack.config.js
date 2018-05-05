@@ -29,7 +29,8 @@ module.exports = {
                     emitErrors: true,
                     failOnHint: true,
                     typeCheck: true,
-                    tsConfigFile: 'tsconfig.json'
+                    tsConfigFile: 'tsconfig.json',
+                    fix: true
                 }
             },
             {
