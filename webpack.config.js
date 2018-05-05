@@ -7,7 +7,7 @@ module.exports = {
         filename: "bundle.js"
     },
     resolve: {
-        extensions: ['.js', '.json', '.ts', '.tsx'],
+        extensions: ['.js', '.json', '.ts', '.tsx']
     },
     devServer: {
         inline: true,
@@ -18,12 +18,16 @@ module.exports = {
         progress: true,
         watchContentBase: true // when true, the source under public file changes will force browser to be refreshed
     },
+    devtool: "inline-source-map",
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)$/,
-                loader: 'awesome-typescript-loader',
-            },
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                options:{
+                    configFile: 'tsconfig.json'
+                }
+            }
         ]
     }
 }
