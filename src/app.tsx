@@ -3,7 +3,7 @@ import { Roles } from "./roles";
 import { Sex } from "./sex";
 
 export interface IAppProps {
-	 name: string;
+	name: string;
 	surname: string;
 	role: Roles;
 	age?: number; // optional,
