@@ -29,7 +29,8 @@ module.exports = {
                     emitErrors: true,
                     failOnHint: true,
                     typeCheck: true,
-                    tsConfigFile: 'tsconfig.json',
+                    configFile: "config/tslint.json",
+                    tsConfigFile: "config/tsconfig.json",
                     fix: true
                 }
             },
@@ -44,7 +45,7 @@ module.exports = {
                         // converts type-script code to es6
                         loader: "ts-loader",
                         options: {
-                            configFile: 'tsconfig.json'
+                            configFile: 'config/tsconfig.json'
                         }
                     }
                 ]

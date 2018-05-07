@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack  --mode production",
     "test": "jest"
   },
   "keywords": [
@@ -48,8 +48,8 @@
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/test-shim.js",
-      "<rootDir>/test-setup.js"
+      "<rootDir>/config/test-shim.js",
+      "<rootDir>/config/test-setup.js"
     ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
@@ -65,6 +65,11 @@
     ],
     "forceCoverageMatch": ["**/*.spec.tsx"],
     "collectCoverage": true,
-    "coverageDirectory": "./__test_output__"
+    "coverageDirectory": "./test_result",
+    "globals": {
+      "ts-jest":{
+        "tsConfigFile":"./config/tsconfig.json"
+      }
+    }
   }
 }
