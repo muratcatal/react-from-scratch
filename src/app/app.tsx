@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import { Roles } from "./roles";
-import { Sex } from "./sex";
+import { Roles } from "../roles";
+import { Sex } from "../sex";
 
 export interface IAppProps {
 	name: string;
