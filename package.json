@@ -4,8 +4,8 @@
   "description": "test description",
   "main": "./src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --mode development",
-    "build": "webpack  --mode production",
+    "start": "webpack-dev-server --config ./config/webpack.config.js --hot --mode development --display-error-details",
+    "build": "webpack --config ./config/webpack.config.js --mode production",
     "test": "jest"
   },
   "keywords": [
