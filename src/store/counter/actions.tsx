@@ -1,17 +1,16 @@
-import { Action } from "redux";
+import { ActionCreator } from "redux";
+import {IDecrementAction, IIncrementAction} from "./types";
 
-export interface IIncrementAction extends Action {
-    type: "@@counter/COUNTER_INCREMENTED";
-    payload:{
-        incrementAmount: number
-    };
-}
+export const decrementCounter: ActionCreator<IDecrementAction> = (decrementAmount: number) => ({
+		payload: {
+				decrementAmount,
+		},
+		type: "@@counter/COUNTER_DECREMENTED",
+});
 
-export interface IDecrementAction extends Action {
-    type: "@@counter/COUNTER_DECREMENTED";
-    payload:{
-        decrementAmount: number
-    };
-}
-
-export type CounterActions = IIncrementAction | IDecrementAction;
+export const incrementCounter: ActionCreator<IIncrementAction> = (incrementAmount: number) => ({
+		payload: {
+				incrementAmount,
+		},
+		type: "@@counter/COUNTER_INCREMENTED",
+});

@@ -1,12 +1,12 @@
 import {combineReducers, Dispatch, Reducer} from "redux";
 
-import {ICounterState} from "./counter/types";
 import counterReducer from "./counter/reducer";
+import {ICounterState} from "./counter/types";
 
 export interface IApplicationState {
-    counter: ICounterState;
+		counter: ICounterState;
 }
 
-export const reducers : Reducer<IApplicationState> = combineReducers<IApplicationState>({
-    counter: counterReducer
+export const reducers: Reducer<IApplicationState> = combineReducers<IApplicationState>({
+		counter: counterReducer,
 });
