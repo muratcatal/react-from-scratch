@@ -2,7 +2,7 @@ import {Reducer} from "redux";
 import {CounterActions, ICounterState} from "./types";
 
 export const initialState: ICounterState = {
-		counter: 0,
+		value: 0,
 };
 
 const reducer: Reducer <ICounterState> = (state: ICounterState = initialState, action) => {
@@ -10,12 +10,12 @@ const reducer: Reducer <ICounterState> = (state: ICounterState = initialState, a
 				case "@@counter/COUNTER_INCREMENTED":
 						return {
 								...state,
-								counter: state.counter + action.payload.incrementAmount,
+								value: state.value + action.payload.incrementAmount,
 						};
 				case "@@counter/COUNTER_DECREMENTED":
 						return {
 								...state,
-								counter: state.counter - action.payload.decrementAmount,
+								value: state.value - action.payload.decrementAmount,
 						};
 				default:
 						return state;

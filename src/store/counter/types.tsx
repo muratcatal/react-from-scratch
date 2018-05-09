@@ -1,7 +1,7 @@
 import { Action } from "redux";
 
 export interface ICounterState {
-    counter : number;
+    value : number;
 }
 
 export interface IIncrementAction extends Action {

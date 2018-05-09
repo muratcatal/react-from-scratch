@@ -21,7 +21,7 @@ type AllProps = ICounterWindowProps & ICounterState & IDispatchProps;
 
 const CounterContainer: React.SFC<AllProps> = (props: AllProps) => (
 		<div>
-				<DisplayCounter count={props.counter}/>
+				<DisplayCounter count={props.value}/>
 				<CounterButton type={ButtonType.Increment} onClick={() => props.increment(1)}/>
 				<CounterButton type={ButtonType.Decrement} onClick={() => props.decrement(1)}/>
 		</div>

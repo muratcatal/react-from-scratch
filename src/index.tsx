@@ -7,13 +7,13 @@ import { IApplicationState } from "./store";
 import { ICounterState } from "./store/counter/types";
 
 const ApplicationInitialState: IApplicationState = {
-	counter: { counter: 10},
+	counter: { value: 10},
 };
 
 const store: Store<IApplicationState> = configureStore(ApplicationInitialState);
 
 render(
 	<Provider store={store}>
-		<Counter dummy={ApplicationInitialState.counter.counter}/>
+		<Counter dummy={ApplicationInitialState.counter.value}/>
 	</Provider>,
 document.getElementById("root"));
