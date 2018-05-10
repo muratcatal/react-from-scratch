@@ -1,8 +1,19 @@
 import React from "react";
 import {render} from "react-dom";
-import App from "./app/app";
-import { Roles } from "./roles";
-import { Sex } from "./sex";
+import {Provider, Store} from "react-redux";
+import configureStore from "./config/redux-store";
+import Counter from "./containers/counter";
+import { IApplicationState } from "./store";
+import { ICounterState } from "./store/counter/types";
+
+const ApplicationInitialState: IApplicationState = {
+	counter: { value: 10},
+};
+
+const store: Store<IApplicationState> = configureStore(ApplicationInitialState);
 
 render(
-		<App name="Murat" surname="Çatal" role={Roles.RW} sex={Sex.Male}/>, document.getElementById("root"));
+	<Provider store={store}>
+		<Counter dummy={ApplicationInitialState.counter.value}/>
+	</Provider>,
+document.getElementById("root"));
