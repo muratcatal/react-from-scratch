@@ -7,7 +7,7 @@ import { decrementCounter, incrementCounter } from "../../store/counter/actions"
 import {ICounterState, IDecrementAction, IIncrementAction} from "../../store/counter/types";
 import {IApplicationState} from "../../store/index";
 
-interface ICounterWindowProps { // extends ConnectedReduxProps<ICounterState>
+interface ICounterWindowProps {
 		// write any props used in counter that is different from CounterState
 		dummy: number;
 }
@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch: Dispatch): IDispatchProps => {
 					dispatch(decrementCounter(amount));
 			},
 			increment: (amount: number) => {
-					dispatch(incrementCounter(amount));
+				dispatch(incrementCounter(amount));
 			},
 		};
 };

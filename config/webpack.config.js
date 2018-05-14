@@ -1,4 +1,6 @@
+const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -55,5 +57,10 @@ module.exports = {
                 exclude: [/node_modules/]
             }
         ]
-    }
+    },
+    plugins:[
+        new Dotenv({
+            path: "./config/.env"
+        })
+    ]
 }
