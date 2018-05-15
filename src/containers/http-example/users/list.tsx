@@ -16,11 +16,11 @@ const ListContainer: React.SFC<AllProps> = (props: AllProps) => (
 		<Users onList={props.listUsers} users={props.list} />
 );
 
-// tslint:disable-next-line:typedef
-const mapStateToProps = (state: IApplicationState): IUsersState => state.users;
 
-// tslint:disable-next-line:typedef
-const mapDispatchToProps = (dispatch: Dispatch): IDispatchProps => {
+const mapStateToProps:(state: IApplicationState)=> IUsersState = (state: IApplicationState): IUsersState => state.users;
+
+
+const mapDispatchToProps:(dispatch: Dispatch) => IDispatchProps = (dispatch: Dispatch): IDispatchProps => {
 		return {
 			listUsers: () => {
 						dispatch(getUsers());

@@ -1,3 +1,4 @@
+import Paper from "material-ui/Paper";
 import React, {Component} from "react";
 import { IUser } from "../../../common/models/users/list";
 
@@ -14,12 +15,12 @@ class Users extends Component<IUserProps, {}> {
 		public render(): JSX.Element {
 				const {users} = this.props;
 
-				return (<>
+				return (<Paper>
 				{
 						users.map((user) => (
 								<div key={user.id}>{user.id} - {user.name} - {user.email}</div>
 						))
-				}</>);
+				}</Paper>);
 		}
 }
 
