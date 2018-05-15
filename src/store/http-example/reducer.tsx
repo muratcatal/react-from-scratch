@@ -11,7 +11,7 @@ const reducer: Reducer <IUsersState> = (state: IUsersState = initialState, actio
 				case "@@http-example/USERS_FETCHED":
 						return {
 							...state,
-							list: action.payload.users,
+							list: action.payload.list,
 						};
 				default:
 						return state;

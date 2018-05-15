@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.config.js --hot --mode development --display-error-details",
     "build": "webpack --config ./config/webpack.config.js --mode production",
-    "test": "jest"
+    "test": "jest",
+    "snapshot-update": "jest -u"
   },
   "keywords": [
     "demo",
@@ -39,6 +40,7 @@
     "jest": "^22.4.3",
     "react-test-renderer": "^16.3.2",
     "redux-devtools-extension": "^2.13.2",
+    "redux-saga-test-plan": "^3.6.0",
     "ts-jest": "^22.4.5",
     "ts-loader": "^4.2.0",
     "tslint": "^5.10.0",
