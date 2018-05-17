@@ -1,0 +1,4 @@
+{
+    "hello": "Hello",
+    "count": "{count, plural, =0 {increase number} one {# increase number for more} other {# good!!!}}"
+}

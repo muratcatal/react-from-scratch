@@ -6,7 +6,7 @@ import { IApplicationState, reducers } from "../../store";
 
 export const sagaMiddleware: SagaMiddleware<{}> = createSagaMiddleware();
 
-export const runSagas:() => Task = () => sagaMiddleware.run(sagas);
+export const runSagas: () => Task = () => sagaMiddleware.run(sagas);
 
 export default function configureStore(
 		initialState: IApplicationState,

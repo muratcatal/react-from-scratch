@@ -3,9 +3,11 @@ import {connect} from "react-redux";
 import {Dispatch} from "redux";
 import CounterButton, {ButtonType} from "../../components/counter/button";
 import DisplayCounter from "../../components/counter/display";
+import LocalizationLanguages from "../../localization/languages";
 import { decrementCounter, incrementCounter } from "../../store/counter/actions";
 import {ICounterState, IDecrementAction, IIncrementAction} from "../../store/counter/types";
 import {IApplicationState} from "../../store/index";
+import { changeLanguage } from "../../store/localization/actions";
 
 interface ICounterWindowProps {
 		// write any props used in counter that is different from CounterState
@@ -27,16 +29,18 @@ const CounterContainer: React.SFC<AllProps> = (props: AllProps) => (
 		</>
 );
 
-const mapStateToProps:(state: IApplicationState) => ICounterState = (state: IApplicationState): ICounterState => state.counter;
+const mapStateToProps: (state: IApplicationState) => ICounterState = (state: IApplicationState): ICounterState =>
+ state.counter;
 
-
-const mapDispatchToProps:(dispatch: Dispatch) => IDispatchProps = (dispatch: Dispatch): IDispatchProps => {
+const mapDispatchToProps: (dispatch: Dispatch) => IDispatchProps = (dispatch: Dispatch): IDispatchProps => {
 		return {
 			decrement: (amount: number) => {
 					dispatch(decrementCounter(amount));
+					dispatch(changeLanguage(LocalizationLanguages.Tr));
 			},
 			increment: (amount: number) => {
 				dispatch(incrementCounter(amount));
+				dispatch(changeLanguage(LocalizationLanguages.En));
 			},
 		};
 };
