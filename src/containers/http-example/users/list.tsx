@@ -16,11 +16,10 @@ const ListContainer: React.SFC<AllProps> = (props: AllProps) => (
 		<Users onList={props.listUsers} users={props.list} />
 );
 
+const mapStateToProps: (state: IApplicationState) => IUsersState = (state: IApplicationState): IUsersState =>
+state.users;
 
-const mapStateToProps:(state: IApplicationState)=> IUsersState = (state: IApplicationState): IUsersState => state.users;
-
-
-const mapDispatchToProps:(dispatch: Dispatch) => IDispatchProps = (dispatch: Dispatch): IDispatchProps => {
+const mapDispatchToProps: (dispatch: Dispatch) => IDispatchProps = (dispatch: Dispatch): IDispatchProps => {
 		return {
 			listUsers: () => {
 						dispatch(getUsers());

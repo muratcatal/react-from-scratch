@@ -1,0 +1,4 @@
+{
+    "hello": "Merhaba",
+    "count": "{count, plural, =0 {Sayı girin} one {# adet girdiniz. sayıyı arttırın} other {# adet girdiniz. Baya iyi}}"
+}
